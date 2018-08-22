@@ -98,7 +98,7 @@ namespace designPattern
         }
 
         // using class adapter
-        /*
+        
         public class MyClassAdapter : MyClass, TheirInterface {
             List<int> TheirInterface.GetNums()
             {
@@ -106,22 +106,22 @@ namespace designPattern
             }
         }
 
-    */
+    
 
             // using object adapter
-        public class MyClassAdapter : TheirInterface
+        public class MyClassAdapter2 : TheirInterface
 
         {
 
             private MyClass mc;
 
-            public MyClassAdapter(MyClass mc)
+            public MyClassAdapter2(MyClass mc)
             {
                 this.mc = mc;
             }
-            List<int> GetNums()
+            public List<int> GetNums()
             {
-                return GetNums().ToList();
+                return mc.GetNums().ToList();
             }
         }
 
